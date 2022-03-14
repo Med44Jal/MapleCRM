@@ -14,24 +14,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let order of orders; let i = index"> 
-        <td class="align-center">{{order.id}}</td>
+      <tr *ngFor="let order of orders; let i = index">
+        <td class="align-center">{{ order.id }}</td>
         <td class="align-center">
-          <span class="label green text-white">{{order.status}}</span>
+          <span class="label green text-white">{{ order.status }}</span>
         </td>
         <td>
-          {{order.customer.name}}
+          {{ order.customer.name }}
           <div class="text-muted text-xs">
-            Member since {{order.customer.createdAt | date}}
+            Member since {{ order.customer.createdAt | date }}
           </div>
         </td>
-        <td>{{order.createdAt | date}}</td>
-        <td class="align-right">{{order.total | currency}}</td>
-        <td class="align-center">
-          Click
-        </td>
+        <td>{{ order.customer.createdAt | date }}</td>
+        <td class="align-right">{{ order.total | currency }}</td>
+        <td class="align-center">Click</td>
       </tr>
-      
     </tbody>
   </table>
 </div>

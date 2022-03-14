@@ -1,5 +1,5 @@
 alter table customer add column createdat date;
 
-alter table customer add column createdby_id bigint;
+alter table customer add column createdby_id bigint(20);
 
 ALTER TABLE customer ADD CONSTRAINT fk_customer_createdby FOREIGN KEY (createdby_id) REFERENCES users(id);

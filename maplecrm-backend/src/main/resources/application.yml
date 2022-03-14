@@ -5,20 +5,21 @@ logging:
 
 spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/maplecrm
-        username: postgres
-        password: vesper
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/maplecrm?serverTimezone=UTC
+        username: root
+        password:
 
     jpa:
         show-sql: true
         hibernate:
-            ddl-auto: none
-            #naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+          ddl-auto: update
         properties:
             hibernate:
                 temp:
                   use_jdbc_metadata_defaults: false
-        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+        database-platform: org.hibernate.dialect.MySQL5Dialect
     jackson:
       date-format: yyyy-MM-dd HH:mm:ss
     security:

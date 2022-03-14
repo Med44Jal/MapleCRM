@@ -59,11 +59,11 @@ public class OrderRepositoryImpl implements OrderRepositoryCustom {
 	@Override
 	public AccountOverview getCurrentAccountOverview(Long userId) {
 		AccountOverview aco = new AccountOverview();
-		Map<String, Object> vals = getAccountSummary(userId, " now() - interval '1 month' and now() ");
+		Map<String, Object> vals = getAccountSummary(userId, "DATE_SUB(NOW(), INTERVAL 1 MONTH) AND NOW()");
 		aco.setMonthlyCustomersCurrent(vals.get("customers"));
 		aco.setMonthlySalesCurrent(vals.get("total"));
 
-		vals = getAccountSummary(userId, " now() - interval '3 month' and now() ");
+		vals = getAccountSummary(userId, "DATE_SUB(NOW(), INTERVAL 3 MONTH) AND NOW()");
 		aco.setQuarterlyCustomersCurrent(vals.get("customers"));
 		aco.setQuarterlySalesCurrent(vals.get("total"));
 		return aco;

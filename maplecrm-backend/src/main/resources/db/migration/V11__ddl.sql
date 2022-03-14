@@ -1,2 +1,2 @@
-alter table orders rename column created_by_id  to createdby_id;
+/*alter table orders CHANGE column created_by_id to createdby_id;*/
 
